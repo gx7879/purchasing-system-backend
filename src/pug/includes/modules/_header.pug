@@ -22,9 +22,9 @@ block variables
               a.menu-link.menu-toggle(href='/')
                 span.menu-text 首頁
                 i.menu-arrow
-            li.menu-item(class={'menu-item-here': page === 'add-product'})
-              a.menu-link(href='/add-product.html')
-                span.menu-text 新增商品
+            li.menu-item(class={'menu-item-here': page === 'member-management'})
+              a.menu-link(href='/member-management.html')
+                span.menu-text 會員管理
                 i.menu-arrow
             li.menu-item(class={'menu-item-here': page === 'order-management'})
               a.menu-link(href='/order-management.html')
@@ -36,8 +36,6 @@ block variables
     // end::Left
     // begin::Topbar
     .topbar
-      .topbar-item
-        a.text-white.mr-2.btn.btn-hover-transparent-white.btn-lg.mr-1(href="/cart.html") 購物車
       // begin::Languages
       .dropdown
         // begin::Toggle
