@@ -1,0 +1,68 @@
+extends ../layout/main
+
+block variables
+  - var page = 'add-product';
+  - var title = '新增代購商品';
+  - var description = 'Description for Webpack + Pug';
+  - var pageClass = 'index-page';
+
+block content
+  // begin::Container
+  #kt_content_container.container-xxl
+    // begin::Table
+    .card.card-custom.mt-6.mt-xl-9
+      // begin::Card header
+      .card-header.border-0
+        //- .card-title
+        //-   h3.card-label Basic Demo
+        .card-toolbar.ml-auto
+          button.btn.btn-light-primary 新增代購
+      //- .card-header.mt-5.border-0
+      //-   // begin::Card title
+      //-   .card-title.flex-column
+      //-     h3.fw-bolder.mb-1 #{title}
+      //-     //- .fs-6.text-gray-400 Total $260,300 sepnt so far
+      //- // end::Card header
+      // begin::Card body
+      .card-body
+        .row.justify-content-center
+          .col-lg-8
+            .form-group.row
+              .col-lg-3
+                label.col-form-label
+                  span 圖片
+              .col-lg-9
+                .image-input.image-input-outline#kt_image_1
+                  .image-input-wrapper(style='background-image: url(assets/media/users/100_1.jpg)')
+                  label.btn.btn-xs.btn-icon.btn-circle.btn-white.btn-hover-text-primary.btn-shadow(data-action='change', data-toggle='tooltip', data-original-title='Change avatar')
+                    i.fa.fa-pen.icon-sm.text-muted
+                    input(type='file', name='profile_avatar', accept='.png, .jpg, .jpeg')
+                    input(type='hidden', name='profile_avatar_remove')
+                  span.btn.btn-xs.btn-icon.btn-circle.btn-white.btn-hover-text-primary.btn-shadow(data-action='cancel', data-toggle='tooltip', title='Cancel avatar')
+                    i.ki.ki-bold-close.icon-xs.text-muted
+            .form-group.row
+              .col-lg-3
+                label.col-form-label
+                  span 連結
+              .col-lg-9
+                input.form-control.form-control-solid(type='text')
+            .form-group.row
+              .col-lg-3
+                label.col-form-label
+                  span 數量
+              .col-lg-9
+                input.form-control.form-control-solid(type='text')
+            .form-group.row
+              .col-lg-3
+                label.col-form-label
+                  span 備註
+              .col-lg-9
+                textarea.form-control.form-control-solid(rows='5')
+            .form-group.row
+              .col-lg-3
+              .col-lg-9
+                button.btn.btn-light-primary 新增代購
+
+block script
+  script.
+    var avatar1 = new KTImageInput('kt_image_1');

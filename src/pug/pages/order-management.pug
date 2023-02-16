@@ -1,0 +1,106 @@
+extends ../layout/main
+
+block variables
+  - var page = 'member';
+  - var title = '會員資料';
+  - var description = 'Description for Webpack + Pug';
+  - var pageClass = 'index-page';
+
+block content
+  // begin::Container
+  #kt_content_container.container-xxl
+    // begin::Table
+    .card.card-custom.mt-6.mt-xl-9
+      //- // begin::Card header
+      //- .card-header.mt-5.border-0
+      //-   // begin::Card title
+      //-   .card-title.flex-column
+      //-     h3.fw-bolder.mb-1 #{title}
+      //-     //- .fs-6.text-gray-400 Total $260,300 sepnt so far
+      //- // end::Card header
+      // begin::Card body
+      .card-body
+        .card.card-custom.gutter-b
+          .card-body
+            .d-flex
+              // begin: Pic
+              .flex-shrink-0.mr-7
+                .symbol.symbol-50.symbol-lg-120
+                  img(alt='Pic', src='assets/media/project-logos/3.png')
+              // end: Pic
+              // begin: Items
+              .d-flex.flex-grow-1.flex-wrap.align-items-sm-center.ml-auto
+                // begin: Item
+                .d-flex.align-items-center.flex-fill.mr-5.my-1
+                  .d-flex.flex-column.text-dark-75
+                    span.font-weight-bolder.font-size-sm 日期
+                    span.font-weight-bolder.font-size-h5
+                      | 2023/01/01
+                // end: Item
+                // begin: Item
+                .d-flex.align-items-center.flex-fill.mr-5.my-1
+                  .d-flex.flex-column.text-dark-75
+                    span.font-weight-bolder.font-size-sm 訂單編號
+                    span.font-weight-bolder.font-size-h5
+                      | 123
+                // end: Item
+                // begin: Item
+                .d-lg-flex.align-items-center.flex-fill.mr-5.my-1.d-none.d-lg-block
+                  .d-flex.flex-column.text-dark-75
+                    span.font-weight-bolder.font-size-sm 商品金額(人民幣)
+                    span.font-weight-bolder.font-size-h5
+                      | $ 1,000
+                // end: Item
+                // begin: Item
+                .d-lg-flex.align-items-center.flex-fill.mr-5.my-1.d-none
+                  .d-flex.flex-column.text-dark-75
+                    span.font-weight-bolder.font-size-sm 商品金額(越南盾)
+                    span.font-weight-bolder.font-size-h5
+                      | $ 1,000
+                // end: Item
+            .separator.separator-solid.my-7
+            .d-flex
+              a.btn.btn-light-primary.ml-auto(href="order.html") 查看詳細
+            // begin: Items
+        .card.card-custom.gutter-b
+          .card-body
+            .d-flex
+              // begin: Pic
+              .flex-shrink-0.mr-7
+                .symbol.symbol-50.symbol-lg-120
+                  img(alt='Pic', src='assets/media/project-logos/3.png')
+              // end: Pic
+              // begin: Items
+              .d-flex.flex-grow-1.flex-wrap.align-items-sm-center.ml-auto
+                // begin: Item
+                .d-flex.align-items-center.flex-fill.mr-5.my-1
+                  .d-flex.flex-column.text-dark-75
+                    span.font-weight-bolder.font-size-sm 日期
+                    span.font-weight-bolder.font-size-h5
+                      | 2023/01/01
+                // end: Item
+                // begin: Item
+                .d-flex.align-items-center.flex-fill.mr-5.my-1
+                  .d-flex.flex-column.text-dark-75
+                    span.font-weight-bolder.font-size-sm 訂單編號
+                    span.font-weight-bolder.font-size-h5
+                      | 123
+                // end: Item
+                // begin: Item
+                .d-lg-flex.align-items-center.flex-fill.mr-5.my-1.d-none.d-lg-block
+                  .d-flex.flex-column.text-dark-75
+                    span.font-weight-bolder.font-size-sm 商品金額(人民幣)
+                    span.font-weight-bolder.font-size-h5
+                      | $ 1,000
+                // end: Item
+                // begin: Item
+                .d-lg-flex.align-items-center.flex-fill.mr-5.my-1.d-none
+                  .d-flex.flex-column.text-dark-75
+                    span.font-weight-bolder.font-size-sm 商品金額(越南盾)
+                    span.font-weight-bolder.font-size-h5
+                      | $ 1,000
+                // end: Item
+            .separator.separator-solid.my-7
+            .d-flex
+              a.btn.btn-light-primary.ml-auto(href="order.html") 查看詳細
+            // begin: Items
