@@ -1,8 +1,8 @@
 extends ../layout/main
 
 block variables
-  - var page = 'member-management'
-  - var title = '帳號管理';
+  - var page = 'account-management'
+  - var title = '會員管理';
   - var description = 'The most advanced Bootstrap Admin Theme on Themeforest trusted by 94,000 beginners and professionals. Multi-demo, Dark Mode, RTL support and complete React, Angular, Vue &amp; Laravel versions. Grab your copy now and get life-time updates for free.';
   - var pageClass = 'index-page';
 block style
@@ -24,14 +24,14 @@ block content
           //- .fs-6.text-gray-400 Total $260,300 sepnt so far
         // begin::Card title
         .card-toolbar
-          a.btn.btn-primary.font-weight-bolder(data-toggle="modal", data-target="#add-member")
+          a.btn.btn-primary.font-weight-bolder(data-toggle="modal", data-target="#add-account")
             span.svg-icon.svg-icon-md
               svg(xmlns='http://www.w3.org/2000/svg', xlink='http://www.w3.org/1999/xlink', width='24px', height='24px', viewBox='0 0 24 24', version='1.1')
                 g(stroke='none', stroke-width='1', fill='none', fill-rule='evenodd')
                   rect(x='0', y='0', width='24', height='24')
                   circle(fill='#000000', opacity='0.3', cx='12', cy='12', r='10')
                   path(d='M11,11 L11,7 C11,6.44771525 11.4477153,6 12,6 C12.5522847,6 13,6.44771525 13,7 L13,11 L17,11 C17.5522847,11 18,11.4477153 18,12 C18,12.5522847 17.5522847,13 17,13 L13,13 L13,17 C13,17.5522847 12.5522847,18 12,18 C11.4477153,18 11,17.5522847 11,17 L11,13 L7,13 C6.44771525,13 6,12.5522847 6,12 C6,11.4477153 6.44771525,11 7,11 L11,11 Z', fill='#000000')
-            | 新增會員
+            | 新增帳號
 
       // end::Card header
       // begin::Card body
@@ -50,6 +50,11 @@ block content
                     input.form-control.form-control-solid(type='text', placeholder='電話', name='name')
                     span
                       i.flaticon2-search-1.text-muted
+                .col-3
+                  select.form-control.form-control-solid
+                    option(value="") 員工
+                    option(value="") 主管
+                    option(value="") BOSS
             .col-auto
               button.btn.btn-sm.btn-primary(type="button") 搜尋
         // begin::Table container
@@ -60,22 +65,22 @@ block content
               tr.fw-bolder.fs-6.text-gray-800
                 th #
                 th 姓名
-                th 編號
+                th email
                 th 電話
                 th 
             tbody
               tr
                 td 1
                 td 王小明
-                td abcd
+                td test@gmail.com
                 td 0912345678
                 td.text-right
-                  button.btn.btn-sm.btn-primary(type="button" data-toggle="modal" data-target="#edit-member") 編輯
+                  button.btn.btn-sm.btn-primary(type="button" data-toggle="modal" data-target="#edit-account") 編輯
                   button.btn.btn-sm.btn-danger(type="button") 封存
               tr
                 td 2
                 td 陳小春
-                td test
+                td test@gmail.com
                 td 0912345678
                 td.text-right
                   button.btn.btn-sm.btn-primary(type="button") 編輯
@@ -84,12 +89,12 @@ block content
         // end::Table container
       // end::Card body
     // end::Card
-    // begin::Modal - member-Add
-    .modal.fade#add-member(tabindex='-1', role='dialog', aria-labelledby='staticBackdrop', aria-hidden='true')
+    // begin::Modal - account-Add
+    .modal.fade#add-account(tabindex='-1', role='dialog', aria-labelledby='staticBackdrop', aria-hidden='true')
       .modal-dialog.modal-dialog-centered(role='document')
         .modal-content
           .modal-header
-            h5.modal-title#exampleModalLabel 新增會員
+            h5.modal-title#exampleModalLabel 新增帳號
             button.close(type='button', data-dismiss='modal', aria-label='Close')
               i.ki.ki-close(aria-hidden='true')
           .modal-body
@@ -105,30 +110,22 @@ block content
               input.form-control(type='text')
             .form-group
               label
-                | 帳號
+                | 權限
                 span.text-danger *
-              input.form-control(type='text')
-            .form-group
-              label
-                | 密碼
-                span.text-danger *
-              input.form-control(type='text')
-            .form-group
-              label
-                | 輸入otp
-                span.text-danger *
-              input.form-control(type='text')
+              select.form-control
+                option(value="") 員工
+                option(value="") 主管
+                option(value="") BOSS
           .modal-footer
             button.btn.btn-light-primary.font-weight-bold(type='button', data-dismiss='modal') 取消
-            button.btn.btn-primary.font-weight-bold(type='button') 發送otp
             button.btn.btn-primary.font-weight-bold(type='button') 確定新增
-    // end::Modal - member-Add
+    // end::Modal - account-Add
 
-    .modal.fade#edit-member(tabindex='-1', role='dialog', aria-labelledby='staticBackdrop', aria-hidden='true')
+    .modal.fade#edit-account(tabindex='-1', role='dialog', aria-labelledby='staticBackdrop', aria-hidden='true')
       .modal-dialog.modal-dialog-centered(role='document')
         .modal-content
           .modal-header
-            h5.modal-title#exampleModalLabel 編輯會員
+            h5.modal-title#exampleModalLabel 編輯帳號
             button.close(type='button', data-dismiss='modal', aria-label='Close')
               i.ki.ki-close(aria-hidden='true')
           .modal-body
@@ -144,22 +141,13 @@ block content
               input.form-control(type='text')
             .form-group
               label
-                | 帳號
+                | 權限
                 span.text-danger *
-              input.form-control(type='text')
-            .form-group
-              label
-                | 密碼
-                span.text-danger *
-              input.form-control(type='text')
-            .form-group
-              label
-                | 輸入otp
-                span.text-danger *
-              input.form-control(type='text')
+              select.form-control
+                option(value="") 員工
+                option(value="") 主管
+                option(value="") BOSS
           .modal-footer
             button.btn.btn-light-primary.font-weight-bold(type='button', data-dismiss='modal') 取消
-            button.btn.btn-primary.font-weight-bold(type='button') 發送otp
             button.btn.btn-primary.font-weight-bold(type='button') 確定編輯
-    // end::Modal - Customers - Add
   // end::Container
